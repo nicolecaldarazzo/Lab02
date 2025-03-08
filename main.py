@@ -7,19 +7,23 @@ while(True):
 
     t.printMenu()
 
-    t.loadDictionary("filename.txt")
+    t.loadDictionary("dictionary.txt")
 
     txtIn = input()
 
     # Add input control here!
 
     if int(txtIn) == 1:
-        print()
+        print("Ok, quale parola devo aggiungere?")
         txtIn = input()
+        t.handleAdd(txtIn.lower())
+        print("Aggiunta!")
+    elif int(txtIn) == 2:
+        print("Ok, quale parola devo cercare?")
+        txtIn = input()
+        traduz = t.handleTranslate(txtIn.lower())
+        print(traduz)
+    elif int(txtIn) == 3:
         pass
-    if int(txtIn) == 2:
-        pass
-    if int(txtIn) == 3:
-        pass
-    if int(txtIn) == 4:
+    elif int(txtIn) == 4:
         break
